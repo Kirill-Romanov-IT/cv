@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kirill Romanov — BIM & Design Automation</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--fg:#151a22;--mut:#5a6372;--acc:#2563eb;--acc2:#0f172a;--line:#e2e6ec;--chip:#eef3fe}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1116;--card:#161b22;--fg:#e7ebf0;--mut:#9aa4b2;--acc:#6ea0ff;--acc2:#0b1220;--line:#262d38;--chip:#1a2436}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 60%,#2563eb 100%);color:#fff;padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1fr 260px;gap:40px;align-items:center}
+.hero h1{font-size:44px;line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+.hero .role{font-size:20px;opacity:.92;margin:0 0 16px}
+.hero .meta{opacity:.75;font-size:15px}
+.hero img{width:260px;height:260px;object-fit:cover;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,.35);border:3px solid rgba(255,255,255,.18)}
+.lang{position:absolute;top:16px;right:16px;display:flex;gap:6px}
+.lang button{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:4px 10px;cursor:pointer;font:600 13px system-ui}
+.lang button.on{background:#fff;color:#1e3a8a}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-34px auto 0;position:relative}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 6px 20px rgba(15,23,42,.06)}
+.stat b{display:block;font-size:30px;line-height:1.1;color:var(--acc);letter-spacing:-.02em}
+.stat span{color:var(--mut);font-size:14px}
+section{padding:44px 0 8px}
+h2{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0 0 22px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0 0 10px;color:var(--mut)}
+.card ul{margin:0;padding-left:18px}.card li{margin:5px 0}
+.num{font-weight:700;color:var(--fg)}.feature .num{color:#fff}
+.feature{background:var(--acc2);color:#e7ebf0;border-radius:20px;padding:30px;border:1px solid #1f2a44}
+.feature h2{color:#fff}.feature .sub{color:#a9b6cc}
+.feature .grid .card{background:#121a2c;border-color:#24304a}.feature .card p{color:#a9b6cc}.feature .card h3{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{background:var(--chip);color:var(--acc);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600}
+.feature .chip{background:#1b2a4a;color:#9cc0ff}
+.timeline{border-left:2px solid var(--line);margin-left:6px;padding-left:22px}
+.timeline .item{position:relative;margin:0 0 20px}
+.timeline .item:before{content:"";position:absolute;left:-29px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--acc)}
+.timeline h3{margin:0;font-size:17px}.timeline p{margin:4px 0 0;color:var(--mut)}
+footer{padding:40px 0 56px;color:var(--mut);font-size:14px;text-align:center}
+[data-l="ru"]{display:none}body.ru [data-l="ru"]{display:revert}body.ru [data-l="en"]{display:none}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero img{width:180px;height:180px;order:-1}.hero h1{font-size:34px}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.feature{padding:22px}}
+</style>
+</head>
+<body>
+<header class="hero" style="position:relative">
+  <div class="lang"><button id="b-en" class="on" onclick="setL('en')">EN</button><button id="b-ru" onclick="setL('ru')">RU</button></div>
+  <div class="wrap">
+    <div>
+      <h1 data-l="en">Kirill Romanov</h1><h1 data-l="ru">Кирилл Романов</h1>
+      <p class="role" data-l="en">Head of BIM &amp; Design Automation · Lead Architect on PIK projects · Founder of CoRos</p>
+      <p class="role" data-l="ru">Руководитель BIM и цифровизации проектирования · ведущий архитектор на проектах ПИК · автор CoRos</p>
+      <p class="meta" data-l="en">I build software that turns structural analysis, BIM models and construction into one source of truth — and cut real project costs with it.</p>
+      <p class="meta" data-l="ru">Создаю программы, которые связывают расчёт, BIM-модель и стройку в одну правду — и снижают реальную стоимость проектов.</p>
+    </div>
+    <img src="photo.jpg" alt="Kirill Romanov">
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>~600</b><span data-l="en">design projects</span><span data-l="ru">проектов</span></div>
+    <div class="stat"><b>−22.8%</b><span data-l="en">rebar steel on a real building (185 → 143 t)</span><span data-l="ru">арматуры на реальном здании (185 → 143 т)</span></div>
+    <div class="stat"><b>100%</b><span data-l="en">MEP links CoRos → Revit (25,360 of 25,360)</span><span data-l="ru">связей сетей CoRos → Revit (25 360 из 25 360)</span></div>
+    <div class="stat"><b>×110+</b><span data-l="en">faster insolation search on GPU</span><span data-l="ru">ускорение перебора инсоляции на GPU</span></div>
+  </div>
+
+  <section>
+    <div class="feature">
+      <h2>CoRos</h2>
+      <p class="sub" data-l="en">My own BIM application, built from scratch as a faster, AI-native alternative to Revit for architecture and MEP. Desktop (Windows) and Android, one Rust core.</p>
+      <p class="sub" data-l="ru">Собственная BIM-программа с нуля — более быстрая альтернатива Revit для архитектуры и инженерных сетей, со встроенным ИИ. Windows и Android, одно ядро на Rust.</p>
+      <div class="grid">
+        <div class="card"><h3 data-l="en">Fast multi-core engine</h3><h3 data-l="ru">Быстрое многоядерное ядро</h3>
+          <p data-l="en">Rust core, GPU rendering (wgpu / DirectX 12). Sections, elevations, PDF, IFC and schedules run in parallel: <span class="num">×9–11</span> on a 20-storey model with <span class="num">10,880 walls</span> and 3,627 openings.</p>
+          <p data-l="ru">Ядро на Rust, отрисовка на видеокарте (wgpu / DirectX 12). Разрезы, фасады, PDF, IFC и спецификации считаются параллельно: <span class="num">×9–11</span> на 20-этажной модели с <span class="num">10 880 стенами</span> и 3 627 проёмами.</p></div>
+        <div class="card"><h3 data-l="en">MEP networks &amp; auto-routing</h3><h3 data-l="ru">Инженерные сети и автотрассировка</h3>
+          <p data-l="en">Piping and ductwork with A* routing. Clash detection on a real water-supply floor: <span class="num">106,491</span> pairs checked, <span class="num">40</span> clashes found and auto-resolved to <span class="num">0</span>, network integrity preserved.</p>
+          <p data-l="ru">Трубы и воздуховоды с трассировкой A*. Коллизии на реальном техэтаже водоснабжения: проверено <span class="num">106 491</span> пар, найдено <span class="num">40</span>, обойдено автоматически до <span class="num">0</span>, сеть цела.</p></div>
+        <div class="card"><h3 data-l="en">Lossless exchange with Revit</h3><h3 data-l="ru">Обмен с Revit без потерь</h3>
+          <p data-l="en">Networks designed in CoRos land in Revit as native families: <span class="num">100%</span> of 25,360 connections on one building, <span class="num">99.88%</span> on another.</p>
+          <p data-l="ru">Сети из CoRos приходят в Revit родными семействами: <span class="num">100 %</span> из 25 360 связей на одном объекте, <span class="num">99,88 %</span> на другом.</p></div>
+        <div class="card"><h3 data-l="en">AI assistant &amp; mobile</h3><h3 data-l="ru">ИИ-ассистент и мобильная версия</h3>
+          <p data-l="en">Built-in chat assistant that edits the model by plan; Android app with touch UI on the same engine; interface designed in Figma (19 ribbon tabs, 360 commands).</p>
+          <p data-l="ru">Встроенный ассистент правит модель по плану; Android-версия с сенсорным интерфейсом на том же ядре; интерфейс спроектирован в Figma (19 вкладок, 360 команд).</p></div>
+      </div>
+      <div class="chips"><span class="chip">Rust</span><span class="chip">wgpu · DX12</span><span class="chip">rayon</span><span class="chip">IFC</span><span class="chip">Revit API</span><span class="chip">Android</span><span class="chip">Figma</span><span class="chip">LLM</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-l="en">Other products</h2><h2 data-l="ru">Другие разработки</h2>
+    <p class="sub" data-l="en">Tools in production use at the design firm and on PIK projects.</p>
+    <p class="sub" data-l="ru">Инструменты в работе проектной компании и на проектах ПИК.</p>
+    <div class="grid">
+      <div class="card"><h3>LiraRebar</h3>
+        <p data-l="en">Structural analysis (LIRA-SAPR) → reinforcement in Revit automatically, with detailing rules, bend checks and weight reports. Optimised rules cut steel by <span class="num">22.8%</span> (185.4 → 143.1 t) on a real building while staying within code.</p>
+        <p data-l="ru">Расчёт ЛИРА-САПР → армирование в Revit автоматически: правила конструирования, проверка гиба, отчёт по массе. Оптимизированные правила сократили арматуру на <span class="num">22,8 %</span> (185,4 → 143,1 т) на реальном здании в пределах норм.</p></div>
+      <div class="card"><h3 data-l="en">AI proposal platform</h3><h3 data-l="ru">Платформа КП с ИИ</h3>
+        <p data-l="en">An LLM reads client briefs — Word, PDF, scans — and builds the scope of work and fee proposal in 1–2 minutes. Runs in the company's office.</p>
+        <p data-l="ru">Нейросеть читает ТЗ заказчика — Word, PDF, сканы — и за 1–2 минуты собирает состав работ и коммерческое предложение. Работает в офисе компании.</p></div>
+      <div class="card"><h3 data-l="en">Insolation &amp; massing</h3><h3 data-l="ru">Инсоляция и массинг</h3>
+        <p data-l="en">Daylight/insolation analysis of 59 surrounding buildings (24,961 window points) for a PIK site; GPU search of apartment layouts — from 4.1 to 465–562 valid variants per second.</p>
+        <p data-l="ru">Инсоляция 59 окружающих домов (24 961 расчётная точка) для участка ПИК; перебор планировок на видеокарте — с 4,1 до 465–562 допустимых вариантов в секунду.</p></div>
+      <div class="card"><h3 data-l="en">AI design office</h3><h3 data-l="ru">ИИ-бюро</h3>
+        <p data-l="en">A multi-agent system that runs design tasks end-to-end: plans the work, drives Revit/AutoCAD, checks results by code and reports.</p>
+        <p data-l="ru">Многоагентная система, которая ведёт проектные задачи от начала до конца: планирует, работает в Revit/AutoCAD, проверяет результат кодом и отчитывается.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-l="en">Experience</h2><h2 data-l="ru">Опыт</h2>
+    <div class="timeline">
+      <div class="item"><h3 data-l="en">Head of BIM &amp; Design Automation (BIM Manager)</h3><h3 data-l="ru">Руководитель BIM и цифровизации проектирования</h3>
+        <p data-l="en">Leads BIM modeling and digitalisation at a design firm: standards, automation, AI adoption, KPI of output per engineer.</p>
+        <p data-l="ru">Руководит BIM-моделированием и цифровизацией в проектной компании: стандарты, автоматизация, внедрение ИИ, метрики выработки на инженера.</p></div>
+      <div class="item"><h3 data-l="en">Lead Architect — PIK projects</h3><h3 data-l="ru">Ведущий архитектор — проекты ПИК</h3>
+        <p data-l="en">Residential complexes for PIK, Russia's largest developer: concept, BIM model, coordination of disciplines.</p>
+        <p data-l="ru">Жилые комплексы для ПИК — крупнейшего девелопера России: концепция, BIM-модель, координация разделов.</p></div>
+      <div class="item"><h3 data-l="en">BIM modeling — architecture &amp; MEP</h3><h3 data-l="ru">BIM-моделирование — АР и инженерия</h3>
+        <p data-l="en">~600 projects: residential, public buildings, HVAC, plumbing, utilities. Revit, AutoCAD/MagiCAD, Rhino.</p>
+        <p data-l="ru">~600 проектов: жильё, общественные здания, ОВ, ВК, наружные сети. Revit, AutoCAD/MagiCAD, Rhino.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-l="en">Vision</h2><h2 data-l="ru">Видение</h2>
+    <p class="sub" data-l="en">A digital twin where analysis = model = construction. From site massing to structure, MEP, cost and developer returns — one model, computed in minutes, accountable to the real building.</p>
+    <p class="sub" data-l="ru">Цифровой двойник: расчёт = модель = стройка. От массинга участка до конструкций, инженерии, стоимости и доходности девелопера — одна модель, считается за минуты и отвечает за реальное здание.</p>
+  </section>
+</div>
+<footer><span data-l="en">Contacts and portfolio on request.</span><span data-l="ru">Контакты и портфолио — по запросу.</span></footer>
+<script>
+function setL(l){document.body.classList.toggle('ru',l==='ru');document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ru').classList.toggle('on',l==='ru');try{localStorage.setItem('l',l)}catch(e){}}
+try{if(localStorage.getItem('l')==='ru')setL('ru')}catch(e){}
+</script>
+</body>
+</html>
